@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Students</h2>
+
+@{
+    for (int student = 0; student < 10; student++)
+    {
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink(string.Concat("Student ", student), "Select", new { id = student })</li>
+        </ul>
+    }
+}
+
+<br />
+@{
+    if (@ViewBag.StudentId != null)
+    {
+        <h1>Student @ViewBag.StudentId</h1>
+    }
+}
+
